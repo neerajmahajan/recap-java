@@ -1,5 +1,5 @@
 # recap-java
 Repository to revise and document Java.
 
-## Repository structure
-  * Will be creating seprate branches in this repository for different topics.
+# Repository structure
+There will be a separate folder for different topics/features. Please read Readme.md in respective folders for details.
