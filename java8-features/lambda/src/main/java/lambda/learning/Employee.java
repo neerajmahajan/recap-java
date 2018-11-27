@@ -35,6 +35,10 @@ public class Employee implements Comparable<Employee>{
 	public int compareTo(Employee o) {
 		return this.name.compareTo(o.name);
 	}
+	
+	public int isEqualBigSmall(Employee o) {
+		return this.name.compareTo(o.name);
+	}
 
 	public void setName(String name) {
 		this.name = name;
