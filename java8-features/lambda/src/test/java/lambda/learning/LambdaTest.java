@@ -2,12 +2,12 @@ package lambda.learning;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.List;
 
 import org.junit.Test;
-
-import junit.framework.Assert;
 
 public class LambdaTest {
 
@@ -71,5 +71,18 @@ public class LambdaTest {
 		Employee e = emp.create("Sandeep",56,5f);
 		assertEquals("Employee should get created with Sandeep", "Sandeep",e.getName());
 		
+	}
+	
+	
+	@Test
+	public void showCollectionsForEachLoopUsage() {
+		List<Employee> empList = new ArrayList<>();
+		empList.add(new Employee("Rohit", 35, 12.5f));
+		empList.add(new Employee("Neeraj", 35, 12.5f));
+		empList.add(new Employee("Vishal", 29, 15.2f));
+		empList.forEach((emp) -> System.out.println(emp.getName()));
+
+		// How to print above result(just name of employees) using below syntax
+		empList.forEach(System.out::println);
 	}
 }
