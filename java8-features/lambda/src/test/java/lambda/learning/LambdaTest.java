@@ -8,6 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 import org.junit.Test;
 
@@ -97,9 +98,9 @@ public class LambdaTest {
         BiFunction<Integer, Integer, Integer> composite1 = (a, b) -> a + b; 
         
         Function<Integer,Integer> add2 = x -> x+2;
-        Function<Integer,Integer> add3 = x -> x+3;
+        Function<Integer,Integer> add3 = x -> x*3;
        
-        
+        // Should return 21
         System.out.println(composite1.andThen(add2).andThen(add3).apply(2, 3));
 		
 	}
@@ -113,6 +114,21 @@ public class LambdaTest {
         
         System.out.println(add2.compose(add3).apply(1));
 		
+	}
+	
+	@Test
+	public void showThisUsage(){
+		Employee e1 = new Employee("a", 24, 4.4f);
+		Employee e2 = new Employee("b", 25, 4.4f);
+		
+		Predicate<Employee> p = (e) -> {
+			System.out.println("#############");
+			System.out.println(this);
+			System.out.println("#############");
+			return e1.getAge() >5;
+		};
+		
+		p.test(e1);
 	}
 	
 }
