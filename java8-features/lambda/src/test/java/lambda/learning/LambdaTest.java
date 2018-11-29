@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.BiFunction;
 
 import org.junit.Test;
 
@@ -58,6 +59,7 @@ public class LambdaTest {
 				new Employee("Vishal", 29, 15.2f)
 				};
 		// How below assignment works when the Comparator compareTo method expect two arguments, however isEqualBigSmall method from Employee class take only one argument ???
+		// This article provide explanation for this... http://baddotrobot.com/blog/2014/02/18/method-references-in-java8/
 		Comparator<Employee> comp = Employee::isEqualBigSmall;
 		
 		Arrays.sort(employees,comp);
@@ -85,4 +87,20 @@ public class LambdaTest {
 		// How to print above result(just name of employees) using below syntax
 		empList.forEach(System.out::println);
 	}
+	
+	@Test
+	public void showBiFunctionalUsage(){
+		// BiFunction to demonstrate composite functions 
+        // Here it will find the sum of two integers 
+        // and then return twice their sum 
+        BiFunction<Integer, Integer, Integer> composite1 = (a, b) -> a + b; 
+  
+        // Using addThen() method 
+        composite1 = composite1.andThen(x -> 2 * x); 
+  
+        // Printing the results 
+        System.out.println("Composite1 = " + composite1.apply(2, 3)); 
+		
+	}
+	
 }
