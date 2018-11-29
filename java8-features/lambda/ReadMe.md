@@ -9,7 +9,7 @@
 ### Method References
   * Reference to a static method.
   * Reference to an instance method of a particular object.
-  * Reference to an instance method of an arbitrary object of a particular type.
+  * Reference to an instance method of an arbitrary object of a particular type supplied later.
   * Reference to constructor.
 
 ###	Common Functional Interfaces
