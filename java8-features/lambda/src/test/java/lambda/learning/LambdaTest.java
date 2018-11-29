@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.BiFunction;
+import java.util.function.Function;
 
 import org.junit.Test;
 
@@ -94,12 +95,23 @@ public class LambdaTest {
         // Here it will find the sum of two integers 
         // and then return twice their sum 
         BiFunction<Integer, Integer, Integer> composite1 = (a, b) -> a + b; 
-  
-        // Using addThen() method 
-        composite1 = composite1.andThen(x -> 2 * x); 
-  
-        // Printing the results 
-        System.out.println("Composite1 = " + composite1.apply(2, 3)); 
+        
+        Function<Integer,Integer> add2 = x -> x+2;
+        Function<Integer,Integer> add3 = x -> x+3;
+       
+        
+        System.out.println(composite1.andThen(add2).andThen(add3).apply(2, 3));
+		
+	}
+	
+	@Test
+	public void showFunctionalUsageWithCompose(){
+               
+        Function<Integer,Integer> add2 = x -> x+2;
+        Function<Integer,Integer> add3 = x -> x*3;
+       
+        
+        System.out.println(add2.compose(add3).apply(1));
 		
 	}
 	
