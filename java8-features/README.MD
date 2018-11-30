@@ -1,4 +1,4 @@
-##### Interfaces
+##### Addition in Interfaces
     * An interface can now have static methods.
     * An Interface can now also have default methods. (Means methods with implementations).
     * A default method can call abstract methods.
