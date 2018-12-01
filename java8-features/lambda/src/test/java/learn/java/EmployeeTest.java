@@ -1,6 +1,9 @@
-package lambda.learning;
+package learn.java;
 
 import org.junit.Test;
+
+import learn.java.Employee;
+
 import static org.junit.Assert.assertNotNull;
 
 public class EmployeeTest {

@@ -1,4 +1,4 @@
-package lambda.learning;
+package learn.java;
 
 public class LambdaExpression {
 
