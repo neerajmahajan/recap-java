@@ -12,4 +12,34 @@ public String getName(){
    }
 }
 ````
-    
+
+
+#####	Closures in Java
+
+*	Variables which are accessed in lambda expression or anonymous inner class from enclosing scope are called closures. Below 'a' is a closure that will be accessible even after the call to test method completes. 
+
+```
+public Consumer<String> test(String a, String b) {
+
+	Consumer<String> con = a -> System.out.println(a)'
+	return con;
+	}
+```
+
+#####	Generic Methods
+```
+Class AverageAlgo {
+
+public static <T> T getMiddle(T... args){
+		return args[args.length/2];
+	} 
+}
+
+String middle = AverageAlgo.<String>getMiddle("Hello","World",);
+
+or 
+
+// Compiler will infer the generic type from the parameter type and return type.
+String middle = AverageAlgo.getMiddle("Hello","World",);
+
+``` 
