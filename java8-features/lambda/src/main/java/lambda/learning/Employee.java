@@ -5,8 +5,13 @@ public class Employee implements Comparable<Employee>{
 	private String name ;
 	private int age;
 	private float salary;
+	private String street;
 	
 	
+	public String getStreet() {
+		return street;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -23,6 +28,10 @@ public class Employee implements Comparable<Employee>{
 		this.name = name;
 		this.age = age;
 		this.salary = salary;
+	}
+	
+	public Employee(String name) {
+		this.name = name;
 	}
 	
 	@Override

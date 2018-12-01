@@ -9,8 +9,11 @@ import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
 
 import org.junit.Test;
+
+import junit.framework.Assert;
 
 public class LambdaTest {
 
@@ -77,6 +80,21 @@ public class LambdaTest {
 		
 	}
 	
+	@Test
+	public void usageOfConstructorMethodReference() {
+		List<String> empNames = new ArrayList<>();
+		
+		empNames.add("Neeraj");
+		empNames.add("Vishal");
+		empNames.add("Rahul");
+		
+		List<Employee> empList = empNames.stream().map(Employee::new).collect(Collectors.toList());
+		
+		assertEquals("Both list should have same size", empNames.size(),empList.size());
+		
+		assertEquals("Both list should have same size", empNames.get(0),empList.get(0).getName());
+		Assert.assertNull(empList.get(0).getStreet());
+	}	
 	
 	@Test
 	public void showCollectionsForEachLoopUsage() {
