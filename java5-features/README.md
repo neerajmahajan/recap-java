@@ -9,6 +9,7 @@
 * The compiler inserts a cast when a return type has been erased.---
 * Casts are not needed for erased parameter types.
 * Cast is required in case of multiple bounds. eg type extends multiple classes or interfaces.
+* Compiler insert a 'bridge method' when we inherit a generic class and tries to override an existing method in super class.
 
 ```
 public class AverageAlgo {
