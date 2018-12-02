@@ -1,22 +1,51 @@
 package learn.java;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 import org.junit.Test;
-
-import learn.java.Employee;
-
-import static org.junit.Assert.assertNotNull;
 
 public class StreamTest {
 	
   @Test
-  public void streamCreation {
+  public void streamCreation() {
 	  
 	  Stream<String> strings = Stream.of("heelo","world","how","are");
 	  
-	  strings.m
+	  List<String> upercaseString = strings.map((x) -> x.toUpperCase()).collect(Collectors.toList());
 	  
+	  upercaseString.forEach(System.out :: println);
 	  
-	  Employee employee = new Employee("Neeraj",24,45.60f);
-	  assertNotNull("Employee shoouldn't be null", employee);
+  }
+  
+  
+  @Test
+  public void streamCreationFromFie() {
+	  
+	 
+	try {
+		 Stream<String> strings = Files.lines(Paths.get("src/main/resources/data.txt"));
+		 
+		 List<String> upercaseString = strings.map((x) -> x.toUpperCase()).collect(Collectors.toList());
+		 upercaseString.forEach(System.out :: println);
+		 
+		 
+		 
+		 String wholeFile = new String(Files.readAllBytes(Paths.get("src/main/resources/data.txt")), StandardCharsets.UTF_8);
+		 List<String> upercaseString2 = Stream.of(wholeFile.split("/n")).map((x) -> x.toLowerCase()).collect(Collectors.toList());
+		 upercaseString2.forEach(System.out :: println);
+		 
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	  
+	 
+	  
   }
 }
