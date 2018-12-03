@@ -12,6 +12,17 @@ import org.junit.Test;
 
 public class StreamTest {
 	
+	@Test
+	  public void testStreamCreationUsingCollection() {
+		  
+		  Stream<String> strings = Stream.of("heelo","world","how","are");
+		  
+		  List<String> upercaseString = strings.map((x) -> x.toUpperCase()).collect(Collectors.toList());
+		  
+		  upercaseString.forEach(System.out :: println);
+		  
+	  }
+	
   @Test
   public void streamCreation() {
 	  
