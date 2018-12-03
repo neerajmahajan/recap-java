@@ -14,11 +14,6 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 
 import junit.framework.Assert;
-import learn.java.BinaryOperation;
-import learn.java.Employee;
-import learn.java.EmployeeFactory;
-import learn.java.StaticUtils;
-import learn.java.Utils;
 
 public class LambdaTest {
 
