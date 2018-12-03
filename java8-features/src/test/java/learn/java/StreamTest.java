@@ -65,8 +65,9 @@ public class StreamTest {
 		Stream<String> mappedStream = filteredStream.map((x) -> x.setValue(new StringBuilder(x.getValue()).reverse().toString()));
 		
 		List<String> upercaseString = mappedStream.collect(Collectors.toList());
-
+		System.out.println("################");
 		upercaseString.forEach(System.out::println);
+		System.out.println("################");
 
 	}
 
