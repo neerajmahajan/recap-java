@@ -25,7 +25,7 @@ public class StreamTest {
   
   
   @Test
-  public void streamCreationFromFie() {
+  public void streamCreationFromFile() {
 	  
 	 
 	try {
