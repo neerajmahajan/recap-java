@@ -13,8 +13,4 @@
 
 	<name>java8-features</name>
 
-	<modules>
-		<module>lambda</module>
-	</modules>
-
 </project>
