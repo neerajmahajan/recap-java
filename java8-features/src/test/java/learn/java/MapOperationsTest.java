@@ -2,6 +2,7 @@ package learn.java;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class FunctionalOperationsTest {
+public class MapOperationsTest {
 
 	Map<String, Integer> colourCodes;
 
@@ -55,6 +56,7 @@ public class FunctionalOperationsTest {
 		Stream<Entry<String, Integer>> stream = entrySet.stream();
 
 		Stream<Entry<String, Integer>> filteredStreamByKey = stream.filter(x -> x.getKey().contains("e"));
+		
 		filteredStreamByKey.forEach(x -> {
 
 			System.out.print(x.getKey() + "###");
@@ -127,7 +129,42 @@ public class FunctionalOperationsTest {
 			System.out.println("Key :: " + key);
 			System.out.println("Value :: " + value);
 		});
-
+		
 	}
+	
+	@Test
+	public void testComp() {
+		
+		Comparator<String> strC = (x,y) -> {
+			
+			System.out.println("6666666666666");
+			System.out.println(this);
+			System.out.println(equals(x));
+			System.out.println("6666666666666");
+			return x.compareTo(y);
+		};
+		
+		strC.compare("Hi", "Hi");
+	}
+	
+	@Test
+	public void testCompAnonymous() {
+		
+		Comparator<String> str = new Comparator<String>() {
+
+			@Override
+			public int compare(String o1, String o2) {
+				System.out.println("55555555555555555555");
+				System.out.println(this);
+				System.out.println(equals(o1));
+				System.out.println("55555555555555555555");
+				return o1.compareTo( o2);
+			}
+		};
+		
+		str.compare("Hi", "Hi");
+	}
+	
+	
 
 }

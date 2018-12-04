@@ -3,6 +3,7 @@ package learn.java;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import org.junit.After;
@@ -45,5 +46,7 @@ public class ListOpertionsTest {
 			System.out.println("Key "  + x);
 			System.out.println("Key length "  + y);
 		});
+		
+		long count = colours.stream().filter(x -> x.equals("Green")).count();
 	}
 }

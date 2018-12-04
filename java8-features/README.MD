@@ -93,10 +93,18 @@ public String getName(){
 *	Variables which are accessed in lambda expression or anonymous inner class from enclosing scope are called closures. Below 'a' is a closure that will be accessible even after the call to test method completes. 
 
 ```
-public Consumer<String> test(String a, String b) {
+	public Consumer<String> test(String a) {
 
-	Consumer<String> con = a -> System.out.println(a)'
-	return con;
+		Consumer<String> con = x -> System.out.println(x + a);
+		return con;
+	}
+	
+	@Test
+	public void testClosure() {
+		
+		Consumer<String> con = test("hello");
+		con.accept("world");
+		
 	}
 ```
 
