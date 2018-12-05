@@ -1,11 +1,8 @@
-package learn.java;
-
-import static org.junit.Assert.assertNotNull;
+package learn.java.test;
 
 import org.junit.Test;
-import org.junit.internal.runners.model.EachTestNotifier;
 
-import static org.junit.Assert.*;
+import learn.java.EnumMethodOverriding;
 
 public class EnumMethodOverridingTest {
 
@@ -13,12 +10,10 @@ public class EnumMethodOverridingTest {
 	public void gettingValueOfEnumIntoString() {
 
 		EnumMethodOverriding[] allEnumConstants = EnumMethodOverriding.values();
+		
 		for (EnumMethodOverriding constant : allEnumConstants) {
 			constant.printMe();
 		}
-
-		// assertEquals("Enum toString and name method should return same
-		// value", string, name);
 	}
 
 	@Test
@@ -29,7 +24,16 @@ public class EnumMethodOverridingTest {
 		switch (constant) {
 
 		case CONSTANT_1:
-
+			System.out.println("This is constant  " + constant);
+			break;
+		case CONSTANT_2:
+			System.out.println("This is constant  " + constant);
+			break;
+		case CONSTANT_3:
+			System.out.println("This is constant  " + constant);
+			break;
+		default:
+			System.out.println("This will never work ");
 		}
 	}
 }

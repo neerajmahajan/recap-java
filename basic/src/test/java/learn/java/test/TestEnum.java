@@ -1,10 +1,11 @@
-package learn.java;
+package learn.java.test;
 
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import learn.java.PipelineStage;
+import learn.java.PipelineStageWithConstructor;
 
 public class TestEnum {
 
@@ -39,4 +40,12 @@ public class TestEnum {
 			System.out.println("     Ordinal Value " + pipelineStage.ordinal());
 		}
 	}
+
+	@Test
+	public void pipelineStageWithConstructor() {
+
+		PipelineStageWithConstructor ps = PipelineStageWithConstructor.ARTEFACT_STORE;
+		System.out.println(ps.getStageNo());
+	}
+
 }
