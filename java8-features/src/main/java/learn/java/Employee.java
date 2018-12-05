@@ -1,11 +1,15 @@
 package learn.java;
 
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class Employee implements Comparable<Employee>{
 	
 	private String name ;
 	private int age;
 	private float salary;
 	private String street;
+	
 	
 	
 	public String getStreet() {
@@ -34,10 +38,14 @@ public class Employee implements Comparable<Employee>{
 		this.name = name;
 	}
 	
-	@Override
+	/*@Override
 	public String toString() {
 		return "Name " + name + " Age " + age + " Salary " + salary;
-	}
+	}*/
+	
+	public String toString() {
+		return ToStringBuilder.reflectionToString(this,ToStringStyle.SHORT_PREFIX_STYLE);
+		}
 
 
 	@Override
