@@ -14,6 +14,7 @@
 	</properties>
 
 	<modules>
+		<module>basic</module>
 		<module>java5-features</module>
 		<module>java8-features</module>
 	</modules>
