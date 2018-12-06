@@ -93,3 +93,4 @@ those objects must return the same result. This means hashCode() can use a subse
 * A static nested class is a static class defined at the member level.
 * It can be instantiated without an object of the enclosing class, so it can’t access the instance variables without an explicit object of the enclosing class.
 * The enclosing class can refer to the fields and methods of the static nested class.
+* To instantiate do ``` InnerStatic innerStatic = new Outer.InnerStatic(); ```
