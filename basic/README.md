@@ -19,6 +19,11 @@ those objects must return the same result. This means hashCode() can use a subse
   return Objects.hash(age,name,salary);
 ```
 
+##### InstanceOf
+* instanceof checks if the left operand is the same class or interface (or a subclass) as the right operand.
+* If the left operand is null, the result is false.
+* If the two operands are not in the same class hierarchy, the code will not compile.
+
 ##### Enums
 * An enum is a class that represents an enumeration. 
 * An enumeration is a fixed set of constant values.
