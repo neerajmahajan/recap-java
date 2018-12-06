@@ -20,6 +20,15 @@ those objects must return the same result. This means hashCode() can use a subse
 ```
 
 ##### Enums
+* An enum is a class that represents an enumeration. 
+* An enumeration is a fixed set of constant values.
+* It is better to use enum instead of plain constant as it provide type safety.
+* We can have constructors, methods and field for enum constants.
+* We can override methods for different constant values.
+* name() and toString() method returns string value of the constant.
+* ordinal() method retruns the integer value of the constant declaration order.
+* values() methods returns the enum array of all constants.
+* EnumType.value("string") method is used to get the enum object from string value.
 
 ##### Nested Classes
 * Inner Class
