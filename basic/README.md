@@ -77,3 +77,14 @@ those objects must return the same result. This means hashCode() can use a subse
    }}
  
  ```
+ 
+ #### Local Inner Classes
+ * A local inner class is a nested class defined within a method.
+ * You can create instances only from within the method.But those instances can still be returned from the method.
+ * They have access to all fields and methods of the enclosing class.
+ * They do not have access to local variables of a method unless those variables are finalor effectively final.
+ 
+ ####	Anonymous Inner Classes
+ * An anonymous inner class is a local inner class that does not have a name.
+ * Anonymous inner classes are required to extend an existing class or implement an existing interface.
+ * They are useful whenyou have a short implementation that will not be used anywhere else
