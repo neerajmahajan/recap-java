@@ -24,6 +24,7 @@ those objects must return the same result. This means hashCode() can use a subse
 * An enumeration is a fixed set of constant values.
 * It is better to use enum instead of plain constant as it provide type safety.
 * We can have constructors, methods and field for enum constants.
+* We can have multiple constructors in an Enum with different number of arguments.
 * We can override methods for different constant values.
 * name() and toString() method returns string value of the constant.
 * ordinal() method retruns the integer value of the constant declaration order.
@@ -31,7 +32,7 @@ those objects must return the same result. This means hashCode() can use a subse
 * EnumType.value("string") method is used to get the enum object from string value.
 
 ##### Nested Classes
-* Inner Class
+* Memeber Inner Class
 * Static Class
 * Anonymous Inner Class
 * Class inside a method (local inner class)
@@ -39,3 +40,40 @@ those objects must return the same result. This means hashCode() can use a subse
 #### Benefits
 * They can encapsulate helper classes by restricting them to the containing class.
 * They can make it easy to create a class that will be used in only one place.
+
+
+#### Member Inner Class
+* A member inner class is defined at the member level of a class.
+* Can be declared public, private, or protected or use default access.
+* Can be abstract or final.
+* Cannot declare static fields or methods.
+* Can access members of the outer class including private members (IMPORTANT POINT)
+* To create inner class instance use or return it via outer class method
+```
+    Outer outer = new Outer();
+		Inner inner = outer.new Inner();
+ ```
+ * If the inner class defined an instance variable with the same name which outer class has defined then inner class needs to use below systax
+ ```
+ public class A {
+  private int x = 10;
+   class B {
+   private int x = 20;
+   class C {
+   private int x = 30;
+   public void allTheX() {
+   System.out.println(x); // 30
+   System.out.println(this.x); // 30
+   System.out.println(B.this.x); // 20
+   System.out.println(A.this.x); // 10
+   }
+   }
+   }
+   public static void main(String[] args) {
+   A a = new A();
+   A.B b = a.new B();
+   A.B.C c = b.new C();
+   c.allTheX();
+   }}
+ 
+ ```
