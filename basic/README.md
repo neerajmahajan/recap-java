@@ -84,7 +84,12 @@ those objects must return the same result. This means hashCode() can use a subse
  * They have access to all fields and methods of the enclosing class.
  * They do not have access to local variables of a method unless those variables are finalor effectively final.
  
- ####	Anonymous Inner Classes
+ #### Anonymous Inner Classes
  * An anonymous inner class is a local inner class that does not have a name.
  * Anonymous inner classes are required to extend an existing class or implement an existing interface.
- * They are useful whenyou have a short implementation that will not be used anywhere else
+ * They are useful whenyou have a short implementation that will not be used anywhere else.
+ 
+ #### Static Nested Class
+* A static nested class is a static class defined at the member level.
+* It can be instantiated without an object of the enclosing class, so it can’t access the instance variables without an explicit object of the enclosing class.
+* The enclosing class can refer to the fields and methods of the static nested class.
