@@ -76,6 +76,7 @@ public class TestEnum {
 		
 		String inputValue = "DEPLOY";
 		org.junit.Assert.assertTrue(PipelineStage.valueOf(inputValue) instanceof PipelineStage );
+		org.junit.Assert.assertTrue(EnumMethodOverriding.valueOf("CONSTANT_1") instanceof EnumMethodOverriding );
 	}
 	
 	@Test
@@ -105,6 +106,7 @@ public class TestEnum {
 		EnumMethodOverriding constant1 = EnumMethodOverriding.CONSTANT_1;
 		EnumMethodOverriding constant2 = EnumMethodOverriding.CONSTANT_2;
 		Assert.assertNotEquals("PrintMe method is overriden and should have different message", constant1.constantValue(),constant2.constantValue());
+		
 
 	}
 
